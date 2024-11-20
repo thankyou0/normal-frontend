@@ -241,24 +241,28 @@ const Navbar = () => {
   };
 
 
-  const handleRightClick = (e, textToRemove) => {
+  const handleRightClick = async (e, textToRemove) => {
     e.preventDefault();
     const confirmed = window.confirm(`Do you want to remove "${textToRemove}"?`);
     if (confirmed) {
 
-      const response = DELETE('/api/quicksearch/delete', { quickSearchText: textToRemove });
-      response.then(() => {
-        console.log(response.data);
+      const response = await POST('/api/quicksearch/delete', { quickSearchText: textToRemove });
+      try {
         if (response.data?.caught) {
           navigate('/login'); return;
           // toast.error(response.data?.message);
         }
         else if (response.data?.success) {
           setQuickSearchText(quickSearchText.filter(text => text !== textToRemove)); // Remove the button from UI
+          toast.success(response.data?.message);
         }
-      }).catch((error) => {
-        console.error('Error removing quick search:', error);
-      });
+        else {
+          toast.error(response.data?.message);
+        }
+      }
+      catch (error) {
+        toast.error('Error deleting quick search');
+      }
     }
   };
 
