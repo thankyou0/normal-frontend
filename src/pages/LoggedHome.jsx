@@ -243,7 +243,15 @@ const LoggedHome = () => {
   const { data: articles = [], isLoading, isError } = useQuery({
     queryKey: ['top_stories'],
     queryFn: async () => {
-      const resultFromBackend = await GET('/api/algorithms/top_stories');
+      // const resultFromBackend = await GET('/api/algorithms/top_stories');
+
+      const token = localStorage.getItem('token');
+      const resultFromBackend = await axios.get(`${config.BACKEND_API_SCRAP}/api/algorithms/top_stories`, {
+        headers: {
+          'Content-Type': 'application/json',
+          authorization: token ? token : '',
+        },
+      });
       // console.log(resultFromBackend);
 
       if (resultFromBackend.data?.success) {

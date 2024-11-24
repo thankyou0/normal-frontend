@@ -5,8 +5,9 @@ const config = {
   // PWD_SECRET: process.env.REACT_APP_PWD_SECRET
   // BACKEND_API :'https://deploy-news.vercel.app',
   // BACKEND_API:'https://netlify-news-backend.netlify.app',
-  // BACKEND_API: 'https://normal-backend-render.onrender.com',
-  BACKEND_API: 'https://normal-backend.vercel.app',
+  BACKEND_API: 'https://normal-backend-render.onrender.com',
+  BACKEND_API_SCRAP: 'https://normal-backend.vercel.app',
+
   PWD_SECRET: 'news-aggregator-secret'
 };
 
