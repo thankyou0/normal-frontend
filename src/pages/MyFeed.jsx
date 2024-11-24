@@ -229,6 +229,8 @@ import { GET } from "../api.js";
 import { Stack } from 'react-bootstrap';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import config from '../config';
 
 const parentstyle = {
   // backgroundColor:"black",
@@ -277,7 +279,14 @@ const MyFeed = () => {
 
     setIsLoading(true);
     try {
-      const response = await GET(urls[pageIndex]);
+      const token = localStorage.getItem('token');
+      const response = await axios.get(`${config.BACKEND_API_SCRAP}${urls[pageIndex]}`, {
+        headers: {
+          'Content-Type': 'application/json',
+          authorization: token ? token : '',
+        },
+      });
+
       if (response.data?.success === false) {
         throw new Error("No more articles found");
       }

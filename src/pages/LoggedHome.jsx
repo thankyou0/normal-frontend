@@ -248,13 +248,15 @@ const LoggedHome = () => {
       // const resultFromBackend = await GET('/api/algorithms/top_stories');
 
       const token = localStorage.getItem('token');
+      console.log("gone");
       const resultFromBackend = await axios.get(`${config.BACKEND_API_SCRAP}/api/algorithms/top_stories`, {
         headers: {
           'Content-Type': 'application/json',
           authorization: token ? token : '',
         },
       });
-      // console.log(resultFromBackend);
+      
+      console.log(resultFromBackend.data);
 
       if (resultFromBackend.data?.success) {
         return resultFromBackend.data.articles;
