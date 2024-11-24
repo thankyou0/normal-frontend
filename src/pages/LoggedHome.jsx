@@ -218,6 +218,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { Grid } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import config from '../config.js';
+import axios from 'axios';
 
 gsap.registerPlugin(ScrollTrigger);
 

@@ -368,6 +368,7 @@ import { useNavigate } from "react-router-dom";
 import { Grid } from "@mui/material";
 import toast from "react-hot-toast";
 import axios from "axios";
+import config from "../config.js";
 gsap.registerPlugin(ScrollTrigger);
 
 // function getWindowDimensions() {
