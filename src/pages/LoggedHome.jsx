@@ -252,7 +252,7 @@ const LoggedHome = () => {
       const resultFromBackend = await axios.get(`${config.BACKEND_API_SCRAP}/api/algorithms/top_stories`, {
         headers: {
           'Content-Type': 'application/json',
-          authorization: token ? token : '',
+          authorization: token ? `Bearer ${token}` : '',
         },
       });
       

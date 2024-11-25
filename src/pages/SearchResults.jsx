@@ -251,7 +251,7 @@ const SearchResults = (props) => {
         authorization: token ? `Bearer ${token}` : '',
       },
       params: { q, site, tbs, gl, location },
-    });
+    }); 
 
     console.log(response.data);
     if (response.data?.success) {

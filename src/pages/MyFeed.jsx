@@ -267,7 +267,15 @@ const MyFeed = () => {
   // Function to load more articles
   const loadMoreArticles = useCallback(async () => {
 
-    const checkauth = await GET("/api/checkauth");
+    // const checkauth = await GET("/api/checkauth");
+
+    const token = localStorage.getItem('token');
+    const checkauth = await axios.get(config.BACKEND_API_SCRAP + '/api/checkauth', {
+      headers: {
+        'Content-Type': 'application/json',
+        authorization: token ? `Bearer ${token}` : '',
+      },
+    });
 
     if (checkauth.data?.caught) {
       toast.error(checkauth.data?.message);
@@ -280,17 +288,19 @@ const MyFeed = () => {
     setIsLoading(true);
     try {
       const token = localStorage.getItem('token');
+      console.log("token", token);
       console.log("token", config.BACKEND_API_SCRAP + urls[pageIndex]);
-      const response = await axios.get(config.BACKEND_API_SCRAP+urls[pageIndex], {
+      const response = await axios.get(config.BACKEND_API_SCRAP + urls[pageIndex], {
         headers: {
           'Content-Type': 'application/json',
-          authorization: token ? token : '',
+          authorization: token ? `Bearer ${token}` : '',
         },
       });
       // const response = null;
 
       if (response.data?.success === false) {
-        throw new Error("No more articles found");
+        // throw new Error("No more articles found");
+        console.log(response.data?.message);
       }
       if (response.data?.caught) {
         // toast.error(response.data?.message);
