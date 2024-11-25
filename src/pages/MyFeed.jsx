@@ -280,8 +280,8 @@ const MyFeed = () => {
     setIsLoading(true);
     try {
       const token = localStorage.getItem('token');
-      console.log("token", token);
-      const response = await axios.get(`${config.BACKEND_API_SCRAP}${urls[pageIndex]}`, {
+      console.log("token", config.BACKEND_API_SCRAP + urls[pageIndex]);
+      const response = await axios.get(config.BACKEND_API_SCRAP+urls[pageIndex], {
         headers: {
           'Content-Type': 'application/json',
           authorization: token ? token : '',
