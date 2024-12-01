@@ -253,21 +253,7 @@ const MyFeed = () => {
   const navigate = useNavigate();
 
   // URLs to fetch articles from (based on pageIndex)
-  const urls = useMemo(() => {
-    return [
-      "/api/myfeed/getmyfeed/text/0",
-      "/api/myfeed/getmyfeed/text/1",
-      "/api/myfeed/getmyfeed/text/2",
-      "/api/myfeed/getmyfeed/text/3",
-      "/api/myfeed/getmyfeed/text/4",
-      "/api/myfeed/getmyfeed/text/5",
-      "/api/myfeed/getmyfeed/text/6",
-      "/api/myfeed/getmyfeed/text/7",
-      "/api/myfeed/getmyfeed/text/8",
-      // "/api/myfeed/getmyfeed/topic/1",
-      // "/api/myfeed/getmyfeed/topic/2"
-    ];
-  }, []);
+  
 
   // Function to load more articles
   const loadMoreArticles = useCallback(async () => {
@@ -288,7 +274,6 @@ const MyFeed = () => {
     //   return;
     // }
 
-    if (pageIndex >= urls.length || isLoading) return; // Prevent further loading if no more URLs or if loading
 
     setIsLoading(true);
 
@@ -338,7 +323,7 @@ const MyFeed = () => {
     } finally {
       setIsLoading(false);
     }
-  }, [pageIndex, isLoading, urls, navigate]);
+  }, [pageIndex, isLoading,  navigate]);
 
   // Filtering articles based on search query
   useEffect(() => {
