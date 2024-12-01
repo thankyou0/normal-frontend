@@ -27,6 +27,7 @@ import { POST } from '../api'; // Adjust the import path as needed
 import EmailRoundedIcon from '@mui/icons-material/EmailRounded';
 import { Modal } from 'react-bootstrap';
 import ForgotPassword from "../components/ForgotPassword";
+import login_background from "../images/login_background.jpg";
 
 
 export default function Login() {
@@ -109,7 +110,6 @@ export default function Login() {
       justifyContent="center"
       alignItems="center"
       sx={{
-        // backgroundImage: `url(${image1})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
@@ -118,6 +118,7 @@ export default function Login() {
         position: 'fixed',
         top: 0,
         left: 0,
+        backgroundImage: `url(${login_background})`,
       }}
     >
       <Grid
@@ -134,7 +135,7 @@ export default function Login() {
           alignItems: "center",
           boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
           backdropFilter: "blur(12px)",
-          backgroundColor: "transparent",
+          backgroundColor: "white",
         }}
       >
         <Avatar sx={{ backgroundColor: "#134611", mb: 2 }}>

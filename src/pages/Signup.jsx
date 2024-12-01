@@ -570,7 +570,7 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import InfoIcon from "@mui/icons-material/Info";
-import image1 from "../images/bg2.jpg";
+import image1 from "../images/login_background.jpg";
 import { POST } from "../api";
 import { Modal } from "react-bootstrap";
 import VerifyEmail from "../components/VerifyEmail.jsx";
@@ -770,7 +770,7 @@ export default function Register() {
             borderRadius: "16px",
             boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
             backdropFilter: "blur(16px)",
-            backgroundColor: "transparent",
+            backgroundColor: "white",
             padding: 1.2,
           }}
         >
