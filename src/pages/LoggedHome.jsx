@@ -321,7 +321,7 @@ const LoggedHome = () => {
       style={{
         overflow: "visible",
         marginTop: "130px",
-        backgroundColor: "white",
+        // backgroundColor: "white",
       }}
     >
       <Box
