@@ -15,29 +15,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [open, setOpen] = useState(false);
-  const [channels, setChannels] = useState([
-    {
-      id: 1,
-      name: "Tech Insider",
-      baseUrl: "https://techinsider.news",
-      logo: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop&q=60",
-      followers: 156000,
-    },
-    {
-      id: 2,
-      name: "Global News Network",
-      baseUrl: "https://gnn.world",
-      logo: "https://images.unsplash.com/photo-1495020689067-958852a7765e?w=800&auto=format&fit=crop&q=60",
-      followers: 289000,
-    },
-    {
-      id: 3,
-      name: "Science Daily",
-      baseUrl: "https://sciencedaily.org",
-      logo: "https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=800&auto=format&fit=crop&q=60",
-      followers: 134000,
-    },
-  ]);
+  const [channels, setChannels] = useState([]);
 
   const handleCreateChannel = (channelData) => {
     const newChannel = {
