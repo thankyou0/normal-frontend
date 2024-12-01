@@ -457,7 +457,7 @@ const Home = () => {
     queryFn: async () => {
       // const resultFromBackend = await GET("/api/algorithms/top_stories");
       const token = localStorage.getItem('token');
-      const resultFromBackend = await axios.get(`${config.BACKEND_API_SCRAP}/api/algorithms/top_stories`, {
+      const resultFromBackend = await axios.get(`${config.BACKEND_API}/api/algorithms/top_stories`, {
         headers: {
           'Content-Type': 'application/json',
           authorization: token ? `Bearer ${token}` : '',

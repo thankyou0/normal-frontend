@@ -249,7 +249,7 @@ const LoggedHome = () => {
 
       const token = localStorage.getItem('token');
       console.log("gone");
-      const resultFromBackend = await axios.get(`${config.BACKEND_API_SCRAP}/api/algorithms/top_stories`, {
+      const resultFromBackend = await axios.get(`${config.BACKEND_API}/api/algorithms/top_stories`, {
         headers: {
           'Content-Type': 'application/json',
           authorization: token ? `Bearer ${token}` : '',
