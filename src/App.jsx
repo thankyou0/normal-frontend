@@ -263,11 +263,14 @@ function App() {
         <Box sx={{ display: 'flex' }}>
           <CssBaseline />
 
-          <Box sx={{ zIndex: (theme) => theme.zIndex.appBar + 2 }}>
-            {shouldShowNavbar_Sidebar && <SidebarNavigation open={open} setOpen={setOpen} />}
-          </Box>
+          {(window.localStorage.getItem('token')) &&
 
-          {shouldShowQuizButton && (
+            <Box sx={{ zIndex: (theme) => theme.zIndex.appBar + 2 }}>
+              {shouldShowNavbar_Sidebar && <SidebarNavigation open={open} setOpen={setOpen} />}
+            </Box>
+          }
+
+          {shouldShowQuizButton && (window.localStorage.getItem('token')) && (
             <Button
               variant="contained"
               onClick={handleQuizButtonClick}
@@ -364,7 +367,7 @@ function App() {
           </Box>
         </Box>
       </ThemeContextProvider>
-    </ThemeProvider >
+    </ThemeProvider>
   );
 }
 

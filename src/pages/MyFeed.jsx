@@ -219,7 +219,7 @@
 
 
 
-import React, { useEffect, useState, useContext, useRef, useCallback, useMemo } from 'react';
+import React, { useEffect, useState, useContext, useRef, useCallback } from 'react';
 import FeedNewsCard from '../components/FeedNewsCard.jsx';
 import Skeleton from '@mui/material/Skeleton';
 import InputAdornment from '@mui/material/InputAdornment';
@@ -323,7 +323,7 @@ const MyFeed = () => {
     } finally {
       setIsLoading(false);
     }
-  }, [pageIndex, isLoading,  navigate]);
+  }, [ pageIndex, navigate]);
 
   // Filtering articles based on search query
   useEffect(() => {

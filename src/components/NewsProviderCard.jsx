@@ -217,6 +217,8 @@ const NewsProviderCard = ({ name, logoUrl, baseURL, provider, onUnfollow }) => {
                 maxWidth: '100%',
                 maxHeight: '100%',
                 objectFit: 'contain',
+                height:'100%',
+                width:'100%'
               }}
             />
           ) : (

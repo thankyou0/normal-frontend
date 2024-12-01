@@ -676,11 +676,10 @@ export default function Register() {
 
 
     try {
-      const result = await POST(`/api/user/isuserexistwhensignup`, { email, role });
+      const result = await POST(`/api/user/isuserexistwhensignup`, {username, email, role });
       console.log(result.data);
 
-      if (!result.data?.success) {
-        // console.log(result.data.message);
+      if (result.data?.success===false) {
         toast.error(result.data.message);
         return;
       }
@@ -729,6 +728,7 @@ export default function Register() {
         navigate('/');
       }
       else {
+        console.log("asdf");
         toast.error(result.data?.message);
       }
     } catch (error) {
