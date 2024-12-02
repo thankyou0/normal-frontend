@@ -200,7 +200,7 @@ const History = () => {
     };
 
     getHistory();
-  }, [navigate, setHistoryArray]);
+  }, [navigate, setHistoryArray, HistoryArray]);
 
 
   const handleRemoveHistory = async () => {
