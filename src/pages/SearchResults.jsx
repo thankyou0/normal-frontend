@@ -483,7 +483,7 @@ const SearchResults = (props) => {
     const [_unused, q, site, tbs, gl, location] = queryKey;
     const token = localStorage.getItem('token');
 
-    const response = await axios.get(`${config.BACKEND_API}/api/search/${pageParam}`, {
+    const response = await axios.get(`${config.BACKEND_API_SCRAP}/api/search/${pageParam}`, {
       headers: {
         'Content-Type': 'application/json',
         authorization: token ? `Bearer ${token}` : '',
