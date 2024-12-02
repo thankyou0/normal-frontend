@@ -570,7 +570,7 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import InfoIcon from "@mui/icons-material/Info";
-import image1 from "../images/login_background.jpg";
+import image1 from "../images/login_background.png";
 import { POST } from "../api";
 import { Modal } from "react-bootstrap";
 import VerifyEmail from "../components/VerifyEmail.jsx";

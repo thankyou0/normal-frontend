@@ -369,7 +369,7 @@ import { Grid } from "@mui/material";
 gsap.registerPlugin(ScrollTrigger);
 
 const parentstyle = {
-  // backgroundColor:"black",
+  // backgroundColor: "black",
   marginTop: "100px",
   display: "flex",
   alignItems: "center",
@@ -542,18 +542,40 @@ const Home = () => {
         />
       </Box>
       {isLoading ? (
-        <div style={{ display: "flex", justifyContent: "center" }}>
-          <Stack spacing={2} sx={{ display: "flex", justifyContent: "center" }}>
-            {[1, 2, 3, 4, 5, 6, 7].map((item, index) => (
-              <Skeleton
-                animation="wave"
-                key={index}
-                variant="rounded"
-                width={800}
-                height={140}
-              />
-            ))}
-          </Stack>
+        <div style={{ marginTop: "50px" ,backgroundColor:"black"} }>
+          <Grid container>
+            <Grid
+              item
+              md={12}
+              xs={9}
+              sm={10}
+              sx={{ position: "relative" }}
+              style={parentstyle}
+            >
+              <Grid
+                container
+                spacing={300} // This adds space between each card (Grid items)
+                style={{
+                  // backgroundColor: "black",
+                  padding: "5px",
+                  margin: "5px",
+                  display: "flex",
+                  flexWrap: "wrap",
+                  justifyContent: "center",
+                }}
+              >
+                {[1, 2, 3, 4, 5, 6, 7, 8].map((item, index) => (
+                  <Skeleton
+                    animation="wave"
+                    key={index}
+                    variant="rounded"
+                    width={800}
+                    height={140}
+                  />
+                ))}
+              </Grid>
+            </Grid>
+          </Grid>
         </div>
       ) : isError ? (
         <div style={{ display: "flex", justifyContent: "center" }}>
