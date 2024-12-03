@@ -35,7 +35,7 @@ const NewsProviderCard = ({ name, logoUrl, baseURL, provider, onUnfollow }) => {
 
   const HandleSeeArticles = () => {
     let myURL = baseURL.replace(/^https?:\/\//, '');
-    myURL = `http://localhost:3000/search?site=${myURL}`;
+    myURL = `https://normal-frontend.onrender.com/search?site=${myURL}`;
     window.open(myURL, '_blank');
   };
 
